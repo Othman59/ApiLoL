@@ -1,77 +1,48 @@
-.navbar {
+body {
+    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-    padding: 10px;
+    text-align: center;
   }
   
-  .navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  h1 {
+    color: #333;
   }
   
-  .navbar-item {
-    margin-right: 10px;
+  #quiz-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .navbar-item:last-child {
-    margin-right: 0;
-  }
-  
-  .navbar-item a {
-    text-decoration: none;
-    color: #333333;
-    padding: 5px;
-    border-radius: 3px;
-  }
-  
-  .navbar-item a:hover {
-    background-color: #dddddd;
-  }
-
-/* Style pour l'image */
-#image {
-    width: 300px;
-    height: auto;
+  #champion-image {
+    max-width: 300px;
     margin-bottom: 20px;
-  }
-  
-  /* Style pour le formulaire */
-  #quiz-form {
-    margin-bottom: 20px;
-  }
-  
-  #quiz-form input[type="text"] {
-    padding: 10px;
-    width: 200px;
-  }
-  
-  #quiz-form button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Style pour le résultat */
-  #result {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
   }
   
   #feedback {
-    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  #answer-input {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
   }
   
-  /* Style pour l'indice */
-  #hint {
-    font-size: 14px;
-    font-style: italic;
-    color: orange;
-    margin-bottom: 10px;
+  #submit-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
   }
   
+  #attempts, #score {
+    margin-top: 20px;
+    font-weight: bold;
+  }
   

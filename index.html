@@ -1,43 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>ApiLoL</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>League of Legends Quiz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>League of Legends Quiz</h1>
+  <div id="quiz-container">
+    <img id="champion-image" src="" alt="Champion Image">
+    <div id="feedback"></div>
+    <input type="text" id="answer-input" placeholder="Entrez votre réponse">
+    <button id="submit-btn">Soumettre</button>
+    <div id="attempts">Nombre d'essais restants: 7</div>
+    <div id="score">Score: 0</div>
+  </div>
 
-<!-- Titre -->
-<h1>League of legend</h1>
-
-<nav class="navbar">
-    <ul class="navbar-list">
-      <li class="navbar-item"><a href="#">Champion</a></li>
-      <li class="navbar-item"><a href="#"></a></li>
-      <li class="navbar-item"><a href="#">Services</a></li>
-      <li class="navbar-item"><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  
-
-<!-- Formulaire -->
-<form id="quiz-form">
-  <input type="text" id="answer" placeholder="Votre réponse" required>
-  <button type="submit">Soumettre</button>
-</form>
-
-<!-- Résultat -->
-<div id="result"></div>
-<div id="feedback"></div>
-
-<!-- Indice -->
-<div id="hint"></div>
-
-
-<script src="script.js"></script>
-
-    
+  <script src="script.js"></script>
 </body>
 </html>
