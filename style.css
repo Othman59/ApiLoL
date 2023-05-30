@@ -1,3 +1,34 @@
+.navbar {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-item {
+    margin-right: 10px;
+  }
+  
+  .navbar-item:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: #333333;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  .navbar-item a:hover {
+    background-color: #dddddd;
+  }
+
 /* Style pour l'image */
 #image {
     width: 300px;
@@ -42,4 +73,5 @@
     color: orange;
     margin-bottom: 10px;
   }
+  
   
