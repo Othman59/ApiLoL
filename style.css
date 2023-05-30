@@ -1,0 +1,45 @@
+/* Style pour l'image */
+#image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour le formulaire */
+  #quiz-form {
+    margin-bottom: 20px;
+  }
+  
+  #quiz-form input[type="text"] {
+    padding: 10px;
+    width: 200px;
+  }
+  
+  #quiz-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style pour le résultat */
+  #result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #feedback {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour l'indice */
+  #hint {
+    font-size: 14px;
+    font-style: italic;
+    color: orange;
+    margin-bottom: 10px;
+  }
+  
