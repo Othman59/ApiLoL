@@ -31,7 +31,7 @@ const scoreElement = document.getElementById("score");
 // Affiche les détails du champion courant
 function displayChampionDetails() {
   const champion = champions[currentChampionIndex];
-  championImage.src = `https://dragon.leagueoflegends.com/cdn/11.1.1/img/champion/${champion.image.full}`;
+  championImage.src = `https://ddragon.leagueoflegends.com/cdn/dragontail-13.10.1.tgz _`;
   // Afficher les autres informations sur le champion dans l'interface
 }
 
