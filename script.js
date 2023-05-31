@@ -4,7 +4,7 @@ const apiKey = "YOUR_API_KEY";
 // Fetches champion data from the League of Legends API
 async function fetchChampionData() {
   try {
-    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/11.1.1/data/en_US/champion.json`);
+    const response = await fetch(`https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-d56f370b-d045-4625-b5a5-a87722f4072f`);
     const data = await response.json();
     const champions = Object.values(data.data);
     return champions;
@@ -31,8 +31,7 @@ const scoreElement = document.getElementById("score");
 // Affiche les détails du champion courant
 function displayChampionDetails() {
   const champion = champions[currentChampionIndex];
-  championImage.src = `https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-d56f370b-d045-4625-b5a5-a87722f4072f`
-
+  championImage.src = `https://dragon.leagueoflegends.com/cdn/11.1.1/img/champion/${champion.image.full}`;
   // Afficher les autres informations sur le champion dans l'interface
 }
 
