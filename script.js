@@ -1,49 +1,78 @@
-// Replace YOUR_API_KEY with your actual Riot Games API key
-const apiKey = "YOUR_API_KEY";
+const submitBtn = document.getElementById('submit-btn');
+const answerInput = document.getElementById('answer-input');
+const question = document.getElementById('question');
+const result = document.getElementById('result');
+const score = document.getElementById('score');
 
-// Fetches champion data from the League of Legends API
-async function fetchChampionData() {
-  try {
-    const response = await fetch(`https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-d56f370b-d045-4625-b5a5-a87722f4072f`);
-    const data = await response.json();
-    const champions = Object.values(data.data);
-    return champions;
-  } catch (error) {
-    console.log("Error fetching champion data:", error);
-    return [];
-  }
-}
+let currentQuestionIndex = 0;
+let currentScore = 0;
 
-// Variables globales
 let champions = [];
-let currentChampionIndex = 0;
-let attemptsLeft = 7;
-let score = 0;
+let correctAnswers = [];
 
-// Éléments DOM
-const championImage = document.getElementById("champion-image");
-const feedback = document.getElementById("feedback");
-const answerInput = document.getElementById("answer-input");
-const submitButton = document.getElementById("submit-btn");
-const attemptsElement = document.getElementById("attempts");
-const scoreElement = document.getElementById("score");
+submitBtn.addEventListener('click', checkAnswer);
 
-// Affiche les détails du champion courant
-function displayChampionDetails() {
-  const champion = champions[currentChampionIndex];
-  championImage.src = `https://ddragon.leagueoflegends.com/cdn/dragontail-13.10.1.tgz _`;
-  // Afficher les autres informations sur le champion dans l'interface
+function fetchChampionList() {
+  // Requête pour obtenir la liste des champions depuis l'API League of Legends
+  fetch(`http://ddragon.leagueoflegends.com/cdn/13.10.1/data/fr_FR/champion.json`)
+    .then(response => JSON.parse(response))
+    .then(data => {
+      champions = Object.keys(data.data);
+      console.log(champions);
+      correctAnswers = champions.slice(); // Copier le tableau pour l'utiliser comme réponses correctes
+      askQuestion();
+    })
 }
 
-// Charge les données des champions depuis l'API et initialise le jeu
-async function initializeGame() {
-  champions = await fetchChampionData();
-  if (champions.length > 0) {
-    displayChampionDetails();
+function fetch(url) {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+      if (request.status === 200) {
+        resolve(request.response);
+      } else {
+        reject(new Error(`Request failed. Status: ${request.status}`));
+      }
+    });
+    request.open('GET', url);
+    request.setRequestHeader('Accept', 'application/json');
+    request.send();
+  });
+}
+
+function checkAnswer() {
+  const userAnswer = answerInput.value;
+  const correctAnswer = correctAnswers[currentQuestionIndex];
+
+  // Vérifier si la réponse de l'utilisateur correspond à la réponse correcte
+  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    result.textContent = 'Bonne réponse!';
+    currentScore++;
   } else {
-    console.log("No champion data available");
+    result.textContent = 'Mauvaise réponse!';
+  }
+
+  currentQuestionIndex++;
+  updateScore();
+  askQuestion();
+}
+
+function updateScore() {
+  score.textContent = `Score: ${currentScore}`;
+}
+
+function askQuestion() {
+  // Vérifier si toutes les questions ont été posées
+  if (currentQuestionIndex >= champions.length) {
+    // Afficher le score final
+    question.textContent = 'Quiz terminé!';
+    result.textContent = `Score final: ${currentScore} sur ${champions.length}`;
+    submitBtn.disabled = true;
+  } else {
+    // Poser la prochaine question
+    question.textContent = `Quel est le champion numéro ${currentQuestionIndex + 1}?`;
+    answerInput.value = '';
   }
 }
 
-// Appeler la fonction d'initialisation du jeu
-initializeGame();
+fetchChampionList();
