@@ -3,23 +3,26 @@
 <head>
   <title>Quiz League of Legends</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 <body>
 <div class="navbar">
-  <a href="#liste">Listage des champions</a>
-  <a href="#compétence">Compétences</a>
+  <a href="liste.html">Listage des champions</a>
+  <a href="competence.html">Compétences</a>
   <a href="#Items">Items</a>
   <a href="#mode">Mode champion</a>
 </div>
 
 <h1>Quiz League of Legends</h1>
+
+<div id="champion-image-container">
+  <img id="champion-image" src="" alt="Champion Image">
+</div>
   
   <div id="question-container">
     <h2 id="question">Qui est ce champion ?</h2>
     <input type="text" id="answer-input" placeholder="Réponse">
     <button id="submit-btn">Soumettre</button>
   </div>
-  
+
   <div id="result-container">
     <p id="result"></p>
     <p id="score">Score: 0</p>

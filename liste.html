@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des champions League of Legends</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+<div class="navbar">
+    <a href="liste.html">Listage des champions</a>
+    <a href="competence.html">Compétences</a>
+    <a href="#Items">Items</a>
+    <a href="#mode">Mode champion</a>
+  </div>
+
+
+  <h1>Liste des champions League of Legends</h1>
+
+  <input type="text" id="searchInput" placeholder="Rechercher par nom, compétence, lord..." />
+
+  <select id="filterSelect">
+    <option value="">Tous</option>
+    <option value="Assassin">Assassin</option>
+    <option value="Tank">Tank</option>
+    <option value="Mage">Mage</option>
+    <option value="ADC">ADC</option>
+    <option value="Support">Support</option>
+  </select>
+
+  <div id="championsContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

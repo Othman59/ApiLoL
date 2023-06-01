@@ -3,6 +3,7 @@ const answerInput = document.getElementById('answer-input');
 const question = document.getElementById('question');
 const result = document.getElementById('result');
 const score = document.getElementById('score');
+const championImage = document.getElementById('champion-image');
 
 let currentQuestionIndex = 0;
 let currentScore = 0;
@@ -18,7 +19,7 @@ function fetchChampionList() {
     .then(response => JSON.parse(response))
     .then(data => {
       champions = Object.keys(data.data);
-      console.log(champions);
+      //console.log(champions);
       correctAnswers = champions.slice(); // Copier le tableau pour l'utiliser comme réponses correctes
       askQuestion();
     })
@@ -61,6 +62,7 @@ function updateScore() {
   score.textContent = `Score: ${currentScore}`;
 }
 
+// Dans votre fonction askQuestion()
 function askQuestion() {
   // Vérifier si toutes les questions ont été posées
   if (currentQuestionIndex >= champions.length) {
@@ -72,7 +74,14 @@ function askQuestion() {
     // Poser la prochaine question
     question.textContent = `Quel est le champion numéro ${currentQuestionIndex + 1}?`;
     answerInput.value = '';
+
+    const championName = champions[currentQuestionIndex];
+    const championImageUrl = `http://ddragon.leagueoflegends.com/cdn/13.10.1/img/champion/${championName}.png`;
+    const championImage = document.getElementById('champion-image');
+    championImage.src = championImageUrl;
+    championImage.alt = `Image du champion ${championName}`;
   }
 }
+
 
 fetchChampionList();
