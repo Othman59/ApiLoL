@@ -5,10 +5,11 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <div class="navbar">
+    <a href="index.html">Quiz</a>
     <a href="liste.html">Listage des champions</a>
     <a href="competence.html">Compétences</a>
     <a href="#Items">Items</a>
-    <a href="#mode">Mode champion</a>
+    <a href="champion.html">Mode champion</a>
   </div>
 
 
@@ -17,6 +18,7 @@
   <input type="text" id="searchInput" placeholder="Rechercher par nom, compétence, lord..." />
 
   <select id="filterSelect">
+    
     <option value="">Tous</option>
     <option value="Assassin">Assassin</option>
     <option value="Tank">Tank</option>
@@ -24,9 +26,13 @@
     <option value="ADC">ADC</option>
     <option value="Support">Support</option>
   </select>
+  
 
-  <div id="championsContainer"></div>
+  <div>
+    <br>
+    <button id="submit-btn">Soumettre</button>
+  </div>
 
-  <script src="script.js"></script>
+  <script src="liste.js"></script>
 </body>
 </html>

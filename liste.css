@@ -59,4 +59,13 @@ body {
   .champion .stats {
     margin-top: 10px;
   }
+
+  #submit-btn {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
   

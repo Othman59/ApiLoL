@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeu du champion</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Quiz</a>
+        <a href="liste.html">Listage des champions</a>
+        <a href="competence.html">Compétences</a>
+        <a href="#Items">Items</a>
+        <a href="champion.html">Mode champion</a>
+      </div>
+  <h1>Jeu du champion</h1>
+  <p>Devinez les informations du champion :</p>
+  
+  <form id="championForm" onsubmit="return checkGuess(event)">
+    <label for="guess">Votre réponse :</label>
+    <input type="text" id="guess" required>
+    <button type="submit">Valider</button>
+  </form>
+  
+  <div id="result"></div>
+
+  <script src="champion.js"></script>
+</body>
+</html>
